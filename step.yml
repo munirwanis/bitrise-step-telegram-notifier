@@ -65,37 +65,17 @@ toolkit:
 
 
 inputs:
-  - TELEGRAM_BOT_TOKEN: null
+  - TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
     opts:
       description: |
         Your bot token
         You can also set it as a Secret with the name `TELEGRAM_BOT_TOKEN`
-      is_required: false
+      is_required: true
       title: Telegram Bot Token
-    - TELEGRAM_CHAT_ID: null
-      opts:
-        description: |
-          The chat you want to send the message
-          You can also set it as a Secret with the name `TELEGRAM_CHAT_ID`
-        is_required: false
-        title: Chat ID
-    # opts:
-    #   title: "Example Step Input"
-    #   summary: Summary. No more than 2-3 sentences.
-    #   description: |
-    #     Description of this input.
-
-    #     Can be Markdown formatted text.
-    #   is_expand: true
-    #   is_required: true
-    #   value_options: []
-
-# outputs:
-#   - EXAMPLE_STEP_OUTPUT:
-#     opts:
-#       title: "Example Step Output"
-#       summary: Summary. No more than 2-3 sentences.
-#       description: |
-#         Description of this output.
-
-#         Can be Markdown formatted text.
+  - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
+    opts:
+      description: |
+        The chat you want to send the message
+        You can also set it as a Secret with the name `TELEGRAM_CHAT_ID`
+      is_required: true
+      title: Chat ID

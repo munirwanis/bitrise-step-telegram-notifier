@@ -3,8 +3,8 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 app:
   envs:
-  # - TELEGRAM_TOKEN: $TELEGRAM_TOKEN
-  # - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
+  - TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
+  - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: telegram-notifier
   - BITRISE_STEP_VERSION: "1.0.0"
@@ -19,7 +19,7 @@ workflows:
         - content: |
             #!/bin/bash
             echo "Just an example 'secrets' print."
-            echo "The value of 'TELEGRAM_TOKEN' is: $TELEGRAM_BOT_TOKEN"
+            echo "The value of 'TELEGRAM_BOT_TOKEN' is: $TELEGRAM_BOT_TOKEN"
             echo "The value of 'TELEGRAM_CHAT_ID' is: $TELEGRAM_CHAT_ID"
     - change-workdir:
         title: Switch working dir to test / _tmp dir
@@ -41,8 +41,8 @@ workflows:
           file if you would not specify another value.
         run_if: true
         inputs:
-        - TELEGRAM_BOT_TOKEN: "459345148:AAFwUHa4-iNaQoHlSavdVFY662DL-IDIf0M"
-        - TELEGRAM_CHAT_ID: "113353643"
+        - TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
+        - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
     - script:
         inputs:
         # - content: |
