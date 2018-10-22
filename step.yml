@@ -79,3 +79,15 @@ inputs:
         You can also set it as a Secret with the name `TELEGRAM_CHAT_ID`
       is_required: true
       title: Chat ID
+  - TELEGRAM_FAILURE_MESSAGE: $TELEGRAM_FAILURE_MESSAGE
+    opts:
+      description: |
+        The message to be presented if a build fails
+      is_required: false
+      title: Failure Message
+  - TELEGRAM_SUCCESS_MESSAGE: $TELEGRAM_SUCCESS_MESSAGE
+    opts:
+      description: |
+        The message to be presented if a build succeeds
+      is_required: false
+      title: Success Message
