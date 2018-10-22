@@ -5,9 +5,11 @@ app:
   envs:
   - TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
   - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
+  - TELEGRAM_FAILURE_MESSAGE: $TELEGRAM_FAILURE_MESSAGE
+  - TELEGRAM_SUCCESS_MESSAGE: $TELEGRAM_SUCCESS_MESSAGE
   # If you want to share this step into a StepLib
   - BITRISE_STEP_ID: telegram-notifier
-  - BITRISE_STEP_VERSION: "1.0.0"
+  - BITRISE_STEP_VERSION: "1.1.0"
   - BITRISE_STEP_GIT_CLONE_URL: https://github.com/munirwanis/bitrise-step-telegram-notifier.git
   - MY_STEPLIB_REPO_FORK_GIT_URL: "https://github.com/munirwanis/bitrise-steplib"
 
@@ -21,6 +23,8 @@ workflows:
             echo "Just an example 'secrets' print."
             echo "The value of 'TELEGRAM_BOT_TOKEN' is: $TELEGRAM_BOT_TOKEN"
             echo "The value of 'TELEGRAM_CHAT_ID' is: $TELEGRAM_CHAT_ID"
+            echo "The value of 'TELEGRAM_FAILURE_MESSAGE' is: $TELEGRAM_FAILURE_MESSAGE"
+            echo "The value of 'TELEGRAM_SUCCESS_MESSAGE' is: $TELEGRAM_SUCCESS_MESSAGE"
     - change-workdir:
         title: Switch working dir to test / _tmp dir
         description: |-
@@ -43,6 +47,8 @@ workflows:
         inputs:
         - TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
         - TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
+        - TELEGRAM_FAILURE_MESSAGE: $TELEGRAM_FAILURE_MESSAGE
+        - TELEGRAM_SUCCESS_MESSAGE: $TELEGRAM_SUCCESS_MESSAGE
     - script:
         inputs:
         # - content: |
